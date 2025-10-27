@@ -30,6 +30,7 @@
         padding: 15px 0;
         text-align: center;
         box-shadow: 0 3px 6px gray;
+        position: relative;
     }
 
     nav {
@@ -37,6 +38,7 @@
         justify-content: center;
         gap: 100px;
         flex-wrap: wrap;
+        transition: all 0.3s ease;
     }
 
     nav a {
@@ -49,6 +51,17 @@
 
     nav a:hover {
         color: lightblue;
+    }
+
+    /* Hamburger menu button (hidden on desktop) */
+    .menu-toggle {
+        display: none;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 26px;
+        cursor: pointer;
+        color: white;
     }
 
     .content {
@@ -83,6 +96,7 @@
 
     .home img {
         width: 500px;
+        max-width: 100%;
         border-radius: 14px;
         box-shadow: 0 6px 12px gray;
     }
@@ -122,7 +136,7 @@
         margin: 10px auto;
         font-size: 18px;
         line-height: 1.8;
-        color: brightdodgerblue;
+        color: navy;
     }
 
     .about-item::before {
@@ -187,8 +201,7 @@
         font-size: 16px;
         line-height: 1.8;
         color: mediumblue;
-         margin-bottom: 15px;
-
+        margin-bottom: 15px;
     }
 
     .contact-info a {
@@ -200,83 +213,146 @@
         text-decoration: underline;
         color: mediumblue;
     }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 10px 0;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        nav {
+            flex-direction: column;
+            gap: 10px;
+            display: none;
+            background-color: dodgerblue;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        nav.active {
+            display: flex;
+        }
+
+        nav a {
+            font-size: 16px;
+            padding: 8px 0;
+        }
+
+        .home-container {
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .home-text h1 {
+            font-size: 26px;
+        }
+
+        .home-text h2 {
+            font-size: 18px;
+        }
+
+        .home-text p {
+            font-size: 16px;
+        }
+
+        .home .quote {
+            font-size: 20px;
+        }
+
+        .about-item, .projects li, .skill-card, .contact-info {
+            font-size: 16px;
+            padding: 10px;
+            max-width: 100%;
+        }
+
+        footer {
+            font-size: 14px;
+            padding: 8px;
+        }
+    }
 </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a onclick="showSection('home')">Home</a>
-            <a onclick="showSection('about')">About</a>
-            <a onclick="showSection('skills')">Skills</a>
-            <a onclick="showSection('projects')">Projects</a>
-            <a onclick="showSection('contact')">Contact</a>
-        </nav>
-    </header>
+<header>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <nav id="navbar">
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('skills')">Skills</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+</header>
 
-    <div id="home" class="content active home">
-        <div class="home-container">
-            <img src="https://imgcdn.stablediffusionweb.com/2024/3/4/5c8a5d08-a318-4764-9c94-32c077df91d9.jpg" alt="Developer at computer">
-            <div class="home-text">
-                <h1>Hi, I'm Kirubel!</h1>
-                <h2>Passionate Learner & Future Web Developer</h2>
-                <p>Welcome to my portfolio! I'm a 3rd year Computer Science student from Gondar University. I enjoy coding, exploring new technologies, and building projects that help me learn and grow.</p>
-                <p>Currently improving my skills in <b>HTML, CSS and JavaScript</b> to become a professional web developer.</p>
-                <p class="quote">"Step by step, line by line, I’m building my future!"</p>
-            </div>
+<div id="home" class="content active home">
+    <div class="home-container">
+        <img src="https://imgcdn.stablediffusionweb.com/2024/3/4/5c8a5d08-a318-4764-9c94-32c077df91d9.jpg" alt="Developer at computer">
+        <div class="home-text">
+            <h1>Hi, I'm Kirubel!</h1>
+            <h2>Passionate Learner & Future Web Developer</h2>
+            <p>Welcome to my portfolio! I'm a 3rd year Computer Science student from Gondar University. I enjoy coding, exploring new technologies, and building projects that help me learn and grow.</p>
+            <p>Currently improving my skills in <b>HTML, CSS and JavaScript</b> to become a professional web developer.</p>
+            <p class="quote">"Step by step, line by line, I’m building my future!"</p>
         </div>
     </div>
+</div>
 
-    <div id="about" class="content">
-       
-        <div class="about-item">I am currently learning HTML, CSS, JavaScript, Java, Algorithms, and CTT-based coding in Java.</div>
-        <div class="about-item">I have worked on team coding projects like a <b>Hotel Booking System</b> and <b>Gym Management Database</b>, mainly as code-based projects (not apps).</div>
-        <div class="about-item">I enjoy solving problems, exploring new technologies, and gradually improving my programming skills.</div>
-        <div class="about-item">My dream is to work in web development and software engineering, building solutions that can help people and organizations in the future.</div>
+<div id="about" class="content">
+    <div class="about-item">I am currently learning HTML, CSS, JavaScript, Java, Algorithms, and CTT-based coding in Java.</div>
+    <div class="about-item">I have worked on team coding projects like a <b>Hotel Booking System</b> and <b>Gym Management Database</b>, mainly as code-based projects (not apps).</div>
+    <div class="about-item">I enjoy solving problems, exploring new technologies, and gradually improving my programming skills.</div>
+    <div class="about-item">My dream is to work in web development and software engineering, building solutions that can help people and organizations in the future.</div>
+</div>
+
+<div id="skills" class="content">
+    <div class="skills-container">
+        <div class="skill-card">HTML & CSS (improving)</div>
+        <div class="skill-card">JavaScript (learning)</div>
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Algorithm (learning)</div>
+        <div class="skill-card">C++</div>
+        <div class="skill-card">Photoshop</div>
+        <div class="skill-card">Database (Oracle SQL)</div>
+        <div class="skill-card">Team Collaboration</div>
     </div>
+</div>
 
-    <div id="skills" class="content">
-        
-        <div class="skills-container">
-            <div class="skill-card">HTML & CSS (improving)</div>
-            <div class="skill-card">JavaScript (learning)</div>
-            <div class="skill-card">Java</div>
-            <div class="skill-card">Algorithm (learning)</div>
-            <div class="skill-card">C++</div>
-            <div class="skill-card">photoshop</div>
-            <div class="skill-card">Database (Oracle SQL)</div>
-            <div class="skill-card">Team Collaboration</div>
-        </div>
+<div id="projects" class="content projects">
+    <ul>
+        <li><b>Hotel Booking System</b> — Team coding project in Java, handling booking and room management with code.</li>
+        <li><b>Gym Management Database</b> — Team project using Oracle SQL to manage members, payments, and schedules.</li>
+    </ul>
+</div>
+
+<div id="contact" class="content">
+    <div class="contact-info">
+        <p>📞 Phone: +251 935 651 125</p>
+        <p>📧 Email: <a href="mailto:kipazgreat1004@gmail.com">kipazgreat1004@gmail.com</a></p>
+        <p>Telegram: <a href="https://t.me/kipabaca" target="_blank">@kipabaca</a></p>
+        <p>🌐 GitHub: <a href="https://github.com/kipaZgreat" target="_blank">kipaZgreat</a></p>
     </div>
+</div>
 
-    <div id="projects" class="content projects">
-        <ul>
-            <li><b>Hotel Booking System</b> — Team coding project in Java, handling booking and room management with code.</li>
-            <li><b>Gym Management Database</b> — Team project using Oracle SQL to manage members, payments, and schedules.</li>
-        </ul>
-    </div>
+<footer>
+    &copy; 2025 Kirubel Workalemahu. All rights reserved.
+</footer>
 
-    <div id="contact" class="content">
-       
-        <div class="contact-info">
-            <p>📞 Phone: +251 935 651 125</p>
-            <p>📧 Email: <a href="mailto:kipazgreat1004@gmail.com">kipazgreat1004@gmail.com</a></p>
-             <p>Telegram: <a href="https://t.me/kipabaca" target="_blank">@kipabaca</a></p>
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.content').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+        document.getElementById('navbar').classList.remove('active'); // close menu on mobile after click
+    }
 
-            <p>🌐 GitHub: <a href="https://github.com/kipaZgreat" target="_blank">kipaZgreat</a></p>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2025 Kirubel Workalemahu. All rights reserved.
-    </footer>
-
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('.content').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(id).classList.add('active');
-        }
-    </script>
+    function toggleMenu() {
+        document.getElementById('navbar').classList.toggle('active');
+    }
+</script>
 </body>
 </html>
