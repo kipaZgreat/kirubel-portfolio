@@ -60,7 +60,7 @@
         right: 25px;
         font-size: 26px;
         cursor: pointer;
-        color:  black;
+        color: black;
     }
 
     .content {
@@ -83,38 +83,35 @@
 
     .home-container {
         display: flex;
-      
         align-items: center;
         justify-content: center;
-        gap: 80px;
-    }
-@media (max-width: 768px) {
-    .home-container {
-        flex-direction: column;  /* stack vertically on small screens */
-        gap: 20px;
-    }
-    .home-text {
-        max-width: 550px;
+        gap: 60px;
+        max-width: 1100px;
+        margin: 0 auto;
     }
 
     .home img {
-        width: 500px;
-        max-width: 100%;
+        width: 380px;
+        height: auto;
         border-radius: 14px;
         box-shadow: 0 6px 12px gray;
+    }
+
+    .home-text {
+        max-width: 550px;
     }
 
     .home h1 {
         color: dodgerblue;
         margin-bottom: 10px;
-        font-size: 32px;
+        font-size: 40px;
         font-weight: 600;
     }
 
     .home h2 {
         color: mediumblue;
         margin-bottom: 20px;
-        font-size: 22px;
+        font-size: 24px;
         font-weight: 500;
     }
 
@@ -128,14 +125,15 @@
     .home .quote {
         font-style: italic;
         color: darkblue;
-        font-size: 26px; 
+        font-size: 22px; 
         font-weight: 600;
         margin-top: 20px;
     }
 
+    
     .about-item {
         text-align: left;
-        max-width: 650px;
+        max-width: 700px;
         margin: 10px auto;
         font-size: 18px;
         line-height: 1.8;
@@ -173,6 +171,7 @@
         box-shadow: 0 6px 12px gray;
     }
 
+   
     .projects-container {
         display: flex;
         flex-wrap: wrap;
@@ -216,11 +215,13 @@
         text-decoration: underline;
     }
 
+    
     .contact-info {
         font-size: 16px;
         line-height: 1.8;
         color: mediumblue;
         margin-bottom: 15px;
+        text-align: center;
     }
 
     .contact-info a {
@@ -233,6 +234,7 @@
         color: mediumblue;
     }
 
+   
     footer {
         background-color: dodgerblue;
         color: white;
@@ -243,14 +245,11 @@
         bottom: 0;
     }
 
+   
     @media (max-width: 768px) {
-        header {
-            padding: 10px 0;
-        }
+        header { padding: 10px 0; }
 
-        .menu-toggle {
-            display: block;
-        }
+        .menu-toggle { display: block; }
 
         nav {
             flex-direction: column;
@@ -261,14 +260,9 @@
             padding: 10px 0;
         }
 
-        nav.active {
-            display: flex;
-        }
+        nav.active { display: flex; }
 
-        nav a {
-            font-size: 16px;
-            padding: 8px 0;
-        }
+        nav a { font-size: 16px; padding: 8px 0; }
 
         .home-container {
             flex-direction: column;
@@ -276,10 +270,15 @@
             padding: 20px;
         }
 
-        .home-text h1 { font-size: 26px; }
-        .home-text h2 { font-size: 18px; }
+        .home img {
+            width: 80%;
+            max-width: 350px;
+        }
+
+        .home-text h1 { font-size: 30px; }
+        .home-text h2 { font-size: 20px; }
         .home-text p { font-size: 16px; }
-        .home .quote { font-size: 20px; }
+        .home .quote { font-size: 18px; }
 
         .about-item, .project-card, .skill-card, .contact-info { font-size: 16px; max-width: 100%; }
 
@@ -304,14 +303,14 @@
         <img src="Image.png" alt="kirubel photo">
         <div class="home-text">
             <h1>Hi, I'm Kirubel!</h1>
-            <h2>Curious mind  Creative code</h2>
-<p>Hi! I'm a 3rd-year Computer Science student at Gondar University with a passion for coding and creating innovative solutions. I love exploring new technologies and building projects that challenge me to grow and improve every day.</p>
-<p>Currently, I am honing my skills in <b>HTML, CSS, and JavaScript</b> to become a skilled and professional web developer capable of building responsive, interactive, and user-friendly web applications.</p>
-<p class="quote">"Not just writing code writing possibility"</p>
-
+            <h2>Curious mind · Creative code</h2>
+            <p>Hi! I'm a 3rd-year Computer Science student at Gondar University with a passion for coding and creating innovative solutions. I love exploring new technologies and building projects that challenge me to grow and improve every day.</p>
+            <p>Currently, I am honing my skills in <b>HTML, CSS, and JavaScript</b> to become a skilled and professional web developer capable of building responsive, interactive, and user-friendly web applications.</p>
+            <p class="quote">"Not just writing code, writing possibility"</p>
         </div>
     </div>
 </div>
+
 
 <div id="about" class="content">
     <div class="about-item">
@@ -324,13 +323,10 @@
         On the front-end, I enjoy creating responsive, user-friendly websites that are visually appealing and interactive. On the back-end, I aim to strengthen my skills in <b>Java, Node.js, and databases</b> to build efficient, secure, and scalable applications.
     </div>
     <div class="about-item">
-        I have worked on team coding projects like a <b>Hotel Booking System</b> and a <b>Gym Management Database</b>, mainly as code-based projects (not apps). These projects helped me gain hands-on experience with databases, logic implementation, and team collaboration.
+        I have worked on team coding projects like a <b>Hotel Booking System</b> and a <b>Gym Management Database</b>. These projects helped me gain hands-on experience with databases, logic implementation, and team collaboration.
     </div>
     <div class="about-item">
         I enjoy solving problems, exploring new technologies, and gradually improving my programming skills through practice and real-world projects.
-    </div>
-    <div class="about-item">
-        My dream is to work in <b>web development and software engineering</b>, building solutions that can help people and organizations in meaningful ways while growing as a full-stack developer.
     </div>
 </div>
 
@@ -347,15 +343,12 @@
     </div>
 </div>
 
+
 <div id="projects" class="content projects">
     <div class="projects-container">
         <div class="project-card">
             <h3>Hotel Booking System</h3>
-            <p>
-                A Java-based project designed to manage hotel room bookings, 
-                track availability, and handle customer reservations efficiently. 
-                I led coding for booking management; the system is simple and user-friendly.
-            </p>
+            <p>A Java-based project designed to manage hotel room bookings, track availability, and handle customer reservations efficiently.</p>
             <a href="https://github.com/kipaZgreat/hotel-reservation-system-java/tree/main" target="_blank">
                 🔗 View Project Code on GitHub
             </a>
@@ -363,10 +356,7 @@
 
         <div class="project-card">
             <h3>Gym Management Database</h3>
-            <p>
-                Developed using Oracle SQL, this project manages gym members, tracks payments, 
-                schedules, and provides reports for efficient gym management.
-            </p>
+            <p>Developed using Oracle SQL, this project manages gym members, tracks payments, schedules, and provides reports for efficient gym management.</p>
             <a href="https://github.com/kipaZgreat/gym_management_and_tracker.sql" target="_blank">
                 🔗 View SQL File on GitHub
             </a>
@@ -379,11 +369,10 @@
     <div class="contact-info">
         <p>📞 Phone: <a href="tel:+251935651125">+251 935 651 125</a></p>
         <p>📧 Email: <a href="mailto:kipazgreat1004@gmail.com">kipazgreat1004@gmail.com</a></p>
-        <p><a href="https://t.me/kipabaca" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width:18px; vertical-align:middle; margin-right:5px;"> Telegram : @kipabaca</a></p>
-        <p><a href="https://github.com/kipaZgreat" target="_blank" style="text-decoration: none;"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width:18px; vertical-align:middle; margin-right:5px;"> GitHub: kipaZgreat</a></p>
+        <p><a href="https://t.me/kipabaca" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" style="width:18px;vertical-align:middle;margin-right:5px;"> Telegram: @kipabaca</a></p>
+        <p><a href="https://github.com/kipaZgreat" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width:18px;vertical-align:middle;margin-right:5px;"> GitHub: kipaZgreat</a></p>
     </div>
 </div>
-
 
 <footer>
     &copy; 2025 Kirubel Workalemahu. All rights reserved.
@@ -404,9 +393,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
