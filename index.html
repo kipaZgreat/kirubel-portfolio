@@ -83,12 +83,16 @@
 
     .home-container {
         display: flex;
-        flex-wrap: wrap;
+      
         align-items: center;
         justify-content: center;
         gap: 80px;
     }
-
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;  /* stack vertically on small screens */
+        gap: 20px;
+    }
     .home-text {
         max-width: 550px;
     }
@@ -298,7 +302,6 @@
 <div id="home" class="content active home">
     <div class="home-container">
         <img src="Image.png" alt="kirubel photo">
- alt="Developer at computer">
         <div class="home-text">
             <h1>Hi, I'm Kirubel!</h1>
             <h2>Curious mind  Creative code</h2>
@@ -401,6 +404,7 @@
 </script>
 </body>
 </html>
+
 
 
 
